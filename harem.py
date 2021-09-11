@@ -126,9 +126,10 @@ async def harem_catcher(client, message):
     if not guessp:
        return logging.info("(Waifu Catch Failed.) \nERROR : 404: Waifu Not Found.")
     guess = guessp.replace("Results for", "")
-    kek = await message.reply_text(f"/protecc {guess}")
+    guesa = guessp.replace("cg artwork", "Stella")
+    kek = await message.reply_text(f"/protecc {guesa}")
     await asyncio.sleep(5)
     await kek.delete()
     log = LogIt(message)
-    msg_to_log = f"[{guess}] - New Waifu Appeared - ({message.chat.title}) - Sucessfully Tried To Protecc"
+    msg_to_log = f"[{guesa}] - New Waifu Appeared - ({message.chat.title}) - Sucessfully Tried To Protecc"
     await log.log_msg(client, msg_to_log)
