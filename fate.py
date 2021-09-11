@@ -111,7 +111,7 @@ def get_data(img):
     if os.path.exists(img):
         os.remove(img)
     if response.status_code == 400:
-        return logging.info("(Waifu Catch Failed) - [Invalid Response]")
+        return logging.info("(Servant Catch Failed) - [Invalid Response]")
     return response.headers["Location"]
 
 harem_event = filters.create(func=harem_event, name="harem_event")
@@ -124,11 +124,12 @@ async def harem_catcher(client, message):
     match = await ParseSauce(fetchUrl + "&preferences?hl=en&fg=1#languages")
     guessp = match["best_guess"]
     if not guessp:
-       return logging.info("(Waifu Catch Failed.) \nERROR : 404: Waifu Not Found.")
+       return logging.info("(Servant Catch Failed.) \nERROR : 404: Waifu Not Found.")
     guess = guessp.replace("Results for", "")
-    kek = await message.reply_text(f"/protecc {guess}")
+    guessa = guess.replace("illya", "illyasviel")
+    kek = await message.reply_text(f"/protecc {guessa}")
     await asyncio.sleep(5)
     await kek.delete()
     log = LogIt(message)
-    msg_to_log = f"[{guess}] - New Waifu Appeared - ({message.chat.title}) - Sucessfully Tried To Protecc"
+    msg_to_log = f"[{guess}] - New Servant Appeared - ({message.chat.title}) - Sucessfully Tried To Protecc"
     await log.log_msg(client, msg_to_log)
