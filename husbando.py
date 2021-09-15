@@ -118,7 +118,8 @@ async def harem_catcher(client, message):
     if not guessp:
        return logging.info("(Husbando Catch Failed.) \nERROR : 404: Husbando Not Found.")
     guess = guessp.replace("Results for", "")
-    guesa = guess.replace("illya", "illyasviel")
+    gues = guess.replace("tokyo ghoul 4k", "kaneki")
+    guesa = gues.replace("solo leveling", "sung jin")
     kek = await message.reply_text(f"/protecc {guesa}")
     await asyncio.sleep(5)
     await kek.delete()
