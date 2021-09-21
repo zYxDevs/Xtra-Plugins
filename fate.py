@@ -125,10 +125,14 @@ async def harem_catcher(client, message):
     guessp = match["best_guess"]
     if not guessp:
        return logging.info("(Servant Catch Failed.) \nERROR : 404: Waifu Not Found.")
-    guess = guessp.replace("Results for", "")
-    gues = guess.replace("райдер судьба ночь схватки", "medusa")
-    gue = gues.replace("atalanta", "atalante")
-    guesa = gue.replace("illya", "illyasviel")
+    a = guessp.replace("Results for", "")
+    b = a.replace("райдер судьба ночь схватки", "medusa")
+    c = b.replace("atalanta", "atalante")
+    d = c.replace("elizabeth", "elisabeth")
+    e = d.replace("尼 托 靈 基", "nitocris")
+    f = e.replace("riko fate grand order", "minamoto")
+    g = f.replace("nasuverse zeus", "europa")
+    guesa = g.replace("illya", "illyasviel")
     kek = await message.reply_text(f"/protecc {guesa}")
     await asyncio.sleep(5)
     await kek.delete()
