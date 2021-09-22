@@ -132,7 +132,7 @@ async def harem_catcher(client, message):
     e = d.replace("尼 托 靈 基", "nitocris")
     f = e.replace("riko fate grand order", "minamoto")
     g = f.replace("nasuverse zeus", "europa")
-    h = g.replace("meltlilith", "meltyllis")
+    h = g.replace("meltlilith", "meltryllis")
     i = h.replace("beni enma", "benienma")
     guesa = i.replace("illya", "illyasviel")
     kek = await message.reply_text(f"/protecc {guesa}")
