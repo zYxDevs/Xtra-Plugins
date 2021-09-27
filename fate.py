@@ -136,7 +136,7 @@ async def harem_catcher(client, message):
     i = h.replace("beni enma", "benienma")
     j = i.replace("atanasia", "anastasia")
     k = j.replace("маш fate", "mash")
-    l = k.replace("alter", "artoria")
+    l = k.replace("alter", "altera artoria alter")
     m = l.replace("arturia", "artoria")
     guesa = m.replace("illya", "illyasviel")
     kek = await message.reply_text(f"/protecc {guesa}")
