@@ -108,9 +108,8 @@ def get_data(img):
 
 harem_event = filters.create(func=harem_event, name="harem_event")
 is_harem_enabled = filters.create(func=is_harem_enabled, name="is_harem_enabled")
-HUSBANDOBOT = int("1964681186", "1112774639")
 
-@listen(filters.user(HUSBANDOBOT) & ~filters.edited & is_harem_enabled & harem_event & filters.group)
+@listen(filters.user([int(1964681186) + int(1112774639)]) & ~filters.edited & is_harem_enabled & harem_event & filters.group)
 async def harem_catcher(client, message):
     img = await message.download()
     fetchUrl = await get_data(img)
