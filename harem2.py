@@ -159,6 +159,6 @@ async def harem_catcher(client, message):
     kek = await message.reply_text(f"/protecc {guesa}")
     await asyncio.sleep(5)
     await kek.delete()
-#    log = LogIt(message)
-#    msg_to_log = f"[{guesa}] - New Waifu Appeared - ({message.chat.title}) - Sucessfully Tried To Protecc"
-#    await log.log_msg(client, msg_to_log)
+    log = LogIt(message)
+    msg_to_log = f"[{guesa}] - New Waifu Appeared - ({message.chat.title}) - Sucessfully Tried To Protecc"
+    await log.log_msg(client, msg_to_log)
