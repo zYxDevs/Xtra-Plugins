@@ -45,4 +45,4 @@ async def github_(client,message):
         else:
             await msg.edit(cap)
     else:
-        await msg.edit(f"`404 : UserNot Found!`")
+        await msg.edit('`404 : UserNot Found!`')

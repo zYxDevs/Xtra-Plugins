@@ -35,7 +35,11 @@ async def scan_my_file(client, message):
     if int(message.reply_to_message.document.file_size) > 25000000:
       return await ms_.edit("`File Too Large , Limit is 25 Mb`")
     c_time = time.time()
-    downloaded_file_name = await message.reply_to_message.download(progress=progress, progress_args=(ms_, c_time, f"`Downloading This File!`"))
+    downloaded_file_name = await message.reply_to_message.download(
+        progress=progress,
+        progress_args=(ms_, c_time, '`Downloading This File!`'),
+    )
+
     url = "https://www.virustotal.com/vtapi/v2/file/scan"
     params = {"apikey": vak}
     files = {"file": (downloaded_file_name, open(downloaded_file_name, "rb"))}

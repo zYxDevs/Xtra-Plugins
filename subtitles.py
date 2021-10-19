@@ -19,8 +19,7 @@ from main_startup.helper_func.basic_helpers import edit_or_reply, get_text
 BASE_URL = "https://isubtitles.org"
 
 async def search_sub(query):
-    BASE_URL = "https://isubtitles.org"
-    final_url = f"{BASE_URL}/search?kwd={query}"
+    final_url = f'https://isubtitles.org/search?kwd={query}'
     async with aiohttp.ClientSession() as session:
       async with session.get(final_url) as resp:
           r = await resp.text()
