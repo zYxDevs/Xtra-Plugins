@@ -40,7 +40,7 @@ async def download_img(url):
     async with aiohttp.ClientSession() as session:
         async with session.get(url) as resp:
             if resp.status == 200:
-                file_path = f"Webshot_FridayUB.png"
+                file_path = 'Webshot_FridayUB.png'
                 f = await aiofiles.open(file_path, mode='wb')
                 await f.write(await resp.read())
                 await f.close()

@@ -28,11 +28,9 @@ from pyrogram import filters
                "help": "Convert Python Codes To Highlighted Html / Image",
                "example": "{ch}cih (replying to py file)"})
 async def convert_to_image_or_html(client, message):
-    force_html = False
     msg_ = await edit_or_reply(message, "`Please Wait!`")
     t = get_text(message)
-    if t:
-        force_html = True
+    force_html = bool(t)
     if not message.reply_to_message:
         await msg_.edit("`Please Reply To A Python Document.`")
         return

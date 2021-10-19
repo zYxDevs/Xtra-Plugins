@@ -17,7 +17,7 @@ async def quotefancy(client, message):
     try:
         imglink = get_quote("image")
     except Exception as e:
-        return await msg.edit(f"**Error :** {str(e)}")
+        return await msg.edit(f'**Error :** {e}')
     if message.reply_to_message:
         await message.reply_to_message.reply_photo(imglink, quote=True)
     else:

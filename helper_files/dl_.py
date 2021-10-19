@@ -33,9 +33,7 @@ class AnyDL:
         url = f'{drive}/uc?export=download&id={file_id}'
         download = requests.get(url, stream=True, allow_redirects=False)
         cookies = download.cookies
-        dl_url = None
-        if download.headers:
-            dl_url = download.headers.get("location")
+        dl_url = download.headers.get("location") if download.headers else None
         if not dl_url:
             page = BeautifulSoup(download.content, 'lxml')
             export = drive + page.find('a', {'id': 'uc-download-url'}).get('href')

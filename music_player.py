@@ -184,9 +184,9 @@ async def play_m(client, message):
         uploade_r = result_s[0]["channel"]
         start = time.time()
         try:
-           audio_original = await yt_dl(url, client, message, start)
+            audio_original = await yt_dl(url, client, message, start)
         except BaseException as e:
-           return await u_s.edit(f"**Failed To Download** \n**Error :** `{str(e)}`")
+            return await u_s.edit(f'**Failed To Download** \n**Error :** `{e}`')
         raw_file_name = (
             ''.join(random.choice(string.ascii_lowercase) for i in range(5))
             + ".raw"
@@ -366,12 +366,12 @@ async def wow_dont_stop_songs(client, message):
     group_call = GPC.get((message.chat.id, client.me.id))
     if not group_call:
         await edit_or_reply(message, "`Is Group Call Even Connected?`")
-        return    
+        return
     if not group_call.is_connected:
         await edit_or_reply(message, "`Is Group Call Even Connected?`")
-        return    
+        return
     group_call.resume_playout()
-    await edit_or_reply(message, f"`▶️ Resumed.`")
+    await edit_or_reply(message, '`▶️ Resumed.`')
         
         
 @friday_on_cmd(
@@ -425,7 +425,7 @@ async def rejoinvcpls(client, message):
         await edit_or_reply(message, "`Is Group Call Even Connected?`")
         return
     await group_call.reconnect()
-    await edit_or_reply(message, f"`Rejoined! - Vc`")
+    await edit_or_reply(message, '`Rejoined! - Vc`')
 
 
 @friday_on_cmd(
